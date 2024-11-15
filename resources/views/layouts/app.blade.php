@@ -22,10 +22,10 @@
     <!-- Scripts -->
 {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>
-<body>
-        <main class="">
+<body style="background-color: #F7EED9">
+
             @yield('content')
-        </main>
+
 
 
 @yield('scriptsBottom')

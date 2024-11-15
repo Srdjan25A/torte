@@ -3,7 +3,7 @@
 @section('styles')
     <style>
         .custom-width {
-            max-width: 600px; /* Ovde postaviš širinu u pikselima */
+            max-width: 600px;
         }
         .button-answer{
             border-radius: 10px;
@@ -15,12 +15,28 @@
             color: #642D12;
 
         }
-        .button-asnwer-1{
-
+        .button-instagram{
+            color: #642D12;
+            font-size: 15px;
+            line-height: 20px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding-top: 14.4px;
+            padding-bottom: 15.25px;
+            padding-left: 28px;
+            padding-right: 28px;
         }
         .custom-width-2{
-            max-width: 400px;
+           /* max-width: 400px;*/
             margin: 0 auto;
+        }
+        .custom-width-22{
+            max-width: 300px;
+            text-align: right;
+            margin-left: auto;
+            color: white;
+            font-weight: bold;
+
         }
         .background-color-section{
             background-color: #F7EED9;
@@ -29,10 +45,17 @@
             background-color: #F7EED9;
             border-top: 1px solid #642D12;
         }
+        .background-color-section-3{
+            background-color: #E48399;
+            padding-top: 29px;
+            padding-bottom: 28px;
+            margin-bottom: 180px;
+        }
         .color-title{
             color: #E48399;
             font-size: 48px;
             line-height: 58px;
+            font-weight: bold;
         }
         .color-text{
             color: #642D12;
@@ -107,6 +130,12 @@
         .arrow-icons.rotate {
             transform: rotate(180deg);
         }
+        .check-correct {
+            color: green;
+        }
+       .d-none{
+           display: none;
+       }
         .hidden-content {
             max-height: 0;
             overflow: hidden;
@@ -115,23 +144,101 @@
             color: #624D12;
             transition: all 0.3s ease-in-out;
         }
+        .hidden-content-title{
+            color: #40B2BE;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .hidden-content-text{
+            color: #642D12;
+            font-size: 14px;
+            line-height: 18px;
+        }
         .hidden-content.active {
             max-height: 500px;
         }
+        .content-container{
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .content-inside{
+            max-width: 350px;
+        }
+        @media (max-width: 768px) {
+            .color-title{
+                color: #E48399;
+                font-size: 24px;
+                line-height: 31px;
+                font-weight: bold;
+                text-align:center;
+            }
+            .content-container{
+                padding-bottom: 10px;
+            }
 
+            .content-inside{
+                max-width: 100%;
+            }
+            .color-text{
+                text-align: center;
+                font-size: 15px;
+                line-height: 20px;
+            }
+            .timeline-title{
+                color: #E48399;
+                font-size: 26px;
+                line-height: 31px;
+                font-weight: bold;
+                text-align: center;
+                width: 300px;
+            }
+            .span-content{
+                font-weight: bold;
+            }
+            .custom-width-22{
+                max-width: 300px;
+                text-align: center;
+                margin:0 auto !important;
+                color: white;
+                font-weight: bold;
+            }
+            .button-instagram{
+                margin-top: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .background-color-section-3{
+                margin-bottom: 62px;
+            }
+            .picture-one{
+                margin-bottom: 32px !important;
+            }
+        }
+        .picture-one{
+            max-width: 70px;
+            height: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 63px;
+        }
     </style>
 @endsection
 @section('content')
-    <div class="background-color-section">
-        <div class="row pt-166 pb-60" style="max-width: 1240px; margin: 0 auto;">
-            <div class="col-md-6 ">
-                <div style="max-width:500px;">
+    <section class="row background-color-section d-flex justify-items-center" >
+        <img class="picture-one" src="{{ asset('images/Group 19.svg') }}" alt="contact">
+    </section>
+   <section class="row background-color-section" >
+        <div class="row  pb-60" style="max-width: 1240px;margin:0 auto;">
+            <div class="col-md-6">
+
+                <div class="content-container">
                     <h2 class="color-title">Učestvuj u kreiranju naše nove omiljene TORTE</h2>
                 </div>
-                    <div>
-                    <p class="color-text">Želimo da okupimo najveći broj ljudi koji je zajednički kreirao jednu tortu.</p>
+                <div class="content-container">
+                    <p  class="color-text content-inside">Želimo da <span class="span-content">okupimo najveći broj ljudi</span> koji je zajednički kreirao jednu tortu.</p>
                     <p class="color-text"> Čekamo tvoj glas - može da bude presudan.</p>
                 </div>
+
             </div>
             <div class="col-md-6 d-flex align-items-center">
                 <div class="text-center container ">
@@ -152,10 +259,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="background-color-section-2">
-        <div class="container  ">
+    <section class="row background-color-section-2" >
+        <div class="container">
             <h3 class="timeline-title  text-center">Kako izgleda proces keiranja NAŠE TORTE?</h3>
 
             <div class="container overflow-hidden">
@@ -171,52 +278,75 @@
 
                             <div class="col-4">
                                 <i class="fa fa-clock-o icon-clock color-icons"></i>
+                                <i class="fa-regular fa-circle-check check-correct d-none"></i>
                                 <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons" onclick="toggleText(this)"></i>
+
                             </div>
 
                         </div>
                         <div class="hidden-content">
-                            <p>Korice su spremne!</p>
-                            <p>Na osnovu glasova iz prve ankete, hrskavi oreo je postao član NAŠE TORTE.</p>
+                            <p class="hidden-content-title">Korice su spremne!</p>
+                            <p class="hidden-content-text">Na osnovu glasova iz prve ankete, hrskavi oreo je postao član NAŠE TORTE.</p>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-12 col-sm-6 col-md-3 ">
-                   <div  class="d-flex align-items-center container-timeline">
-                       <div class="col-8">
-                           <p class="date-text">20.11. / Sreda</p>
-                            <p class="text-timeline">Biramo prvi fil</p>
-                       </div>
-                       <div class="col-4">
-                           <i class="fa fa-clock-o icon-clock color-icons"></i>
-                           <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons"></i>
-                       </div>
-                   </div>
-                </div>
-                <div class="col-12  col-sm-6 col-md-3 ">
 
-                   <div class="d-flex align-items-center container-timeline">
+                <div class="col-12 col-sm-6 col-md-3 ">
+                    <div class=" container-timeline">
+                   <div  class="d-flex align-items-center">
+                        <div class="col-8">
+                            <p class="date-text">20.11. / Sreda</p>
+                            <p class="text-timeline">Biramo prvi fil</p>
+                        </div>
+                        <div class="col-4">
+                            <i class="fa fa-clock-o icon-clock color-icons"></i>
+                            <i class="fa-regular fa-circle-check check-correct d-none"></i>
+                            <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons" onclick="toggleText(this)"></i>
+                        </div>
+                   </div>
+                        <div class="hidden-content">
+                            <p class="hidden-content-title">Prvi fil je spreman!</p>
+                            <p class="hidden-content-text">Na osnovu glasova iz druge ankete, NAŠOJ TORTI se pridružuje sočna kombinacija bele čokolade i maline.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12  col-sm-6 col-md-3 ">
+                 <div class="container-timeline">
+                   <div class="d-flex align-items-center">
                       <div class="col-8">
                         <p class="date-text">16.11. / Sreda</p>
                         <p class="text-timeline">Biramo drugi fil</p>
                       </div>
                        <div class="col-4">
                            <i class="fa fa-clock-o icon-clock color-icons"></i>
-                           <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons" ></i>
+                           <i class="fa-regular fa-circle-check check-correct d-none"></i>
+                           <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons" onclick="toggleText(this)"></i>
                        </div>
                    </div>
-
+                     <div class="hidden-content">
+                         <p class="hidden-content-title">Prvi fil je spreman!</p>
+                         <p class="hidden-content-text">Na osnovu glasova iz druge ankete, NAŠOJ TORTI se pridružuje sočna kombinacija bele čokolade i maline.</p>
+                     </div>
+                 </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 ">
-                    <div  class="d-flex align-items-center container-timeline">
+                    <div class="container-timeline">
+                    <div  class="d-flex align-items-center">
                         <div class="col-8">
                             <p class="date-text"> 16.11. / Sreda</p>
                             <p class="text-timeline">Biramo dekoracije</p>
                         </div>
                         <div class="col-4">
                             <i class="fa fa-clock-o icon-clock color-icons"></i>
-                            <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons"></i>
+                            <i class="fa-regular fa-circle-check check-correct d-none"></i>
+                            <i class="fa fa-chevron-down arrow-icon ms-2 arrow-icons" onclick="toggleText(this)"></i>
+                        </div>
+                    </div>
+                        <div class="hidden-content">
+                            <p class="hidden-content-title">Prvi fil je spreman!</p>
+                            <p class="hidden-content-text">Na osnovu glasova iz druge ankete, NAŠOJ TORTI se pridružuje sočna kombinacija bele čokolade i maline.</p>
                         </div>
                     </div>
                 </div>
@@ -224,32 +354,49 @@
             </div>
         </div>
 
-    </div>
-        <div class="bg-secondary-subtle text-center pb-5 pt-5">
-            <div class="custom-width-2">
-                <h3 class="text-center">Aenean lacinia bibendum nulla sed consectetur donec id elit?</h3>
-            </div>
-            <button class="button-answer">Instagram stranica</button>
+    </section>
+    <div class="row background-color-section-3" >
+        <div class="row container custom-width-2">
+        <div class="col-md-6 ">
+                <p class="text-right custom-width-22">Prati nas na našem Instagram profilu, jer tamo objavljujemo svaki korak u procesu kreiranja NAŠE TORTE!</p>
         </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <button class="button-instagram">Instagram stranica <i style="padding-left:10px;font-size: 20px;" class="fa-brands fa-instagram"></i></button>
+
+        </div>
+        </div>
+    </div>
 @endsection
 
 
 @section("scriptsBottom")
     <script>
 
-            function toggleText(arrow) {
-                // Pronađi roditeljski div sa klasom .container-timeline
-                const container = arrow.closest('.container-timeline');
+        function toggleText(arrow) {
+            // Pronađi roditeljski div sa klasom .container-timeline
+            const container = arrow.closest('.container-timeline');
 
-                // Pronađi skriveni sadržaj unutar istog roditeljskog elementa
-                const hiddenContent = container.querySelector('.hidden-content');
+            // Pronađi elemente unutar tog kontejnera
+            const hiddenContent = container.querySelector('.hidden-content');
+            const clockIcon = container.querySelector('.color-icons');
+            const checkIcon = container.querySelector('.check-correct');
 
-                // Preklopi klasu 'active' za prikazivanje/sakrivanje sadržaja
-                hiddenContent.classList.toggle('active');
+            // Preklopi prikaz skrivenog sadržaja
+            hiddenContent.classList.toggle('active');
 
-                // Okreni strelicu
-                arrow.classList.toggle('rotate');
+            // Okreni strelicu
+            arrow.classList.toggle('rotate');
+
+            // Prikazivanje i sakrivanje ikonica
+            if (hiddenContent.classList.contains('active')) {
+                clockIcon.classList.add('d-none'); // Sakrij časovnik
+                checkIcon.classList.remove('d-none'); // Prikaži check ikonu
+            } else {
+                clockIcon.classList.remove('d-none'); // Prikaži časovnik
+                checkIcon.classList.add('d-none'); // Sakrij check ikonu
             }
+        }
+
 
 
         document.addEventListener('DOMContentLoaded',function(){
