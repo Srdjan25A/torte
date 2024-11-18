@@ -15,9 +15,9 @@ class SubmissionsController extends Controller{
     }
     public function addSubmission(Request $request){
         $submissionData=[
-          'answer_number'=>$request->input('answer_number'),
-            'question_id'=>$request->input('question_id')
-
+            'answer_number'=>$request->input('answer_number'),
+            'question_id'=>$request->input('question_id'),
+            'ip' => $request->ip()
         ];
         $question=$this->submissionsServices->addSubmissions($submissionData);
         //izracunaj procente te procente saljes dalje
